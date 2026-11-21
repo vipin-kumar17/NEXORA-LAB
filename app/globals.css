@@ -1,0 +1,49 @@
+@import "tailwindcss";
+:root{--bg:#08090D;--bg2:#10121A;--p:#8B5CF6;--s:#6366F1;--hl:#A78BFA;--tx:#F5F5F7;--mu:#9CA3AF;--line:rgba(255,255,255,.09)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:var(--font-body),system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:var(--font-head),system-ui,sans-serif;letter-spacing:-.02em;line-height:1.08}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--hl);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+.sec{padding:5rem 0}
+.h1{font-size:clamp(2.4rem,7vw,5.2rem);font-weight:700}
+.h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:700}
+.mut{color:var(--mu)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.4rem;border-radius:.75rem;font-weight:600;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-p{background:linear-gradient(135deg,var(--p),var(--s));color:#fff}
+.btn-g{border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.btn-g:hover{border-color:var(--hl)}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:1rem;padding:1.5rem;transition:border-color .25s,transform .25s}
+a.card:hover{border-color:var(--hl);transform:translateY(-4px)}
+.grid-a{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.chip{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.2rem .7rem;font-size:.8rem;color:var(--mu)}
+.field{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:.6rem;padding:.75rem 1rem;color:var(--tx)}
+.err{color:#f87171;font-size:.85rem}
+/* hero orbital visual (CSS only, lightweight) */
+.orb{position:relative;width:min(380px,80vw);aspect-ratio:1;margin:auto}
+.orb i{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(167,139,250,.45);animation:spin 18s linear infinite}
+.orb i:nth-child(2){inset:12%;border-color:rgba(99,102,241,.55);animation-duration:12s;animation-direction:reverse;transform:rotateX(65deg)}
+.orb i:nth-child(3){inset:24%;animation-duration:9s;transform:rotateY(65deg)}
+.orb i::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:var(--hl);box-shadow:0 0 14px var(--p)}
+.orb b{position:absolute;inset:36%;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--hl),var(--p) 45%,#1b1550);box-shadow:0 0 80px rgba(139,92,246,.55)}
+@keyframes spin{to{rotate:360deg}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes menu{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* page ke upar wala hissa: page khulte hi */
+main>section:first-of-type .wrap>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+main>section:first-of-type .wrap>*:nth-child(2){animation-delay:.15s}
+main>section:first-of-type .wrap>*:nth-child(3){animation-delay:.3s}
+
+/* baaki sections: scroll par */
+.rv{opacity:0;transform:translateY(24px)}
+.rv.rv-in{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+
+/* mobile menu kholne par */
+.menu-in{animation:menu .25s ease both}
+
+/* jinko animation pasand nahi (reduced motion) unke liye sab turant dikhe */
+@media (prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}}
