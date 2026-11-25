@@ -18,6 +18,7 @@ export const metadata = {
   applicationName: "Nexora Lab",
   alternates: { canonical: "./" },
   robots: { index: true, follow: true },
+  verification: { google: "811o8dyeE4i-r3B1BasleuQGmOwb0F-UPQ1_fti_tq4" },
   openGraph: {
     siteName: "Nexora Lab",
     type: "website",
