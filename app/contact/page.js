@@ -11,6 +11,16 @@ export default function Contact() {
   <ul className="mt-8 space-y-3">
     <li><EmailLink email={contactInfo.email} className="text-[var(--hl)]" /></li>
     <li><a className="text-[var(--hl)]" href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}>{contactInfo.phone}</a></li>
+    <li>
+  <a
+    className="text-[var(--hl)]"
+    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}`}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {contactInfo.address}
+  </a>
+</li>
   </ul>
 </></div><ContactForm /></div></section>);
 }

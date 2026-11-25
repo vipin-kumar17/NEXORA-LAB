@@ -34,6 +34,15 @@ export default function Footer() {
           <ul className="mut mt-3 space-y-2 text-sm">
             <li><EmailLink email={contactInfo.email} /></li>
             <li><a href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}>{contactInfo.phone}</a></li>
+            <li>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {contactInfo.address}
+              </a>
+            </li>
           </ul>
           <div style={{ marginTop: "1.25rem" }}>
             <SocialLinks />
