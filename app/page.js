@@ -21,6 +21,17 @@ export default function Home() {
   </div>
 </section>
 
+<section style={{ padding: "2.5rem 0" }}>
+  <div className="wrap">
+    <div className="card text-center" style={{ padding: "1.75rem 1.25rem" }}>
+      <h2 className="text-2xl font-bold md:text-3xl">We love open source</h2>
+      <p className="mut mx-auto mt-3 max-w-2xl text-sm md:text-base">
+        Our work is built on the open source tools and communities that power the modern web. Our founder is an active open source contributor, and we bring that same mindset to every project we build.
+      </p>
+    </div>
+  </div>
+</section>
+
     <section className="sec"><div className="wrap"><Heading title="What we build" text="Eleven services, one team, from first sketch to long-term support." /><div className="grid-a">{services.map(s=><ServiceCard key={s.slug} s={s}/>)}</div></div></section>
 
     <section className="sec bg-[var(--bg2)]"><div className="wrap"><Heading title="Why Nexora Lab" /><div className="grid-a">{why.map(([t,d])=><div key={t} className="rounded-xl border-l-2 border-[var(--p)] bg-white/[.02] p-5"><h3 className="font-semibold">{t}</h3><p className="mut mt-1 text-sm">{d}</p></div>)}</div></div></section>
